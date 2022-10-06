@@ -1,0 +1,27 @@
+/*------------ general styles ----------- */
+
+
+
+
+/*------------- header content styles -------------- */
+
+
+
+
+/*------- main content styles ------------- */
+.main{
+    width: 100%;
+}
+.row{
+    width: 90%;
+    border: 2px solid #0f0f0f0f;
+    display: flex;
+}
+.column{
+    width: fit-content;
+    border: 1px solid #0a0a0a0a
+}
+
+/*---------- individual content styles --------- */
+
+
