@@ -1,16 +1,57 @@
 /*------------ general styles ----------- */
-
+body{
+    margin: 0px;
+    background-color: #082E00;
+}
 
 
 
 /*------------- header content styles -------------- */
+header{
+    width: 100%;
+    height: 100px;
+    display: flex;
+    background-color: #1EA300;
+}
+#coursename{
+    width:fit-content;
+    margin-right: 15px;
+    margin-left: 8px;
+    color: #080640;
+}
+nav{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.navInput{
+    border: 1px solid #00C711;
+    background-color: #0AC785;
+    color:#C72E0A;
+}
 
-
-
+.inputsbox, .buttonsbox{
+    display: flex;
+    justify-content: space-evenly;
+}
+.navInput::placeholder{
+    color: #7A1700;
+}
+button{
+    background-color: #CFC50A;
+    color: #6C0082;
+    border: 1px solid #00C711;
+}
 
 /*------- main content styles ------------- */
-.main{
+main{
     width: 100%;
+    background-color: #24C400;
+}
+.maincontentContainer{
+    width: 95%;
+    padding-top: 20px;
+    margin-left: 2%;
 }
 .row{
     width: 90%;
@@ -19,9 +60,13 @@
 }
 .column{
     width: fit-content;
-    border: 1px solid #0a0a0a0a
+    border: 1px solid #0a0a0a0a;
+    color: #C45314;
 }
 
 /*---------- individual content styles --------- */
-
+.heading{
+    font-weight: bold;
+    color: #782F06;
+}
 
