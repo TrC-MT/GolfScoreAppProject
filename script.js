@@ -128,8 +128,6 @@ class Player {
   var PlrIdValue = 0
   function addPlr(){
     PlrIdValue += 1
-    console.log('PlrIdValue:')
-    console.log(PlrIdValue)
     PlrId = 'Plr' + PlrIdValue
     if(PlrIdValue <= 4){
         new Player(document.getElementById('PlrNm').value, id = PlrId)
