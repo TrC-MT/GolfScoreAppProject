@@ -114,7 +114,10 @@ async function render(){
     // }
     // document.getElementById('Players').innerHTML = FifthRowHTML
     
-
+    //Making sad color scheme if wanted
+    if(CS == true){
+        ColorScheme()
+    }
 }
 //-----------------Player objects--------------------
 class Player {
@@ -161,5 +164,43 @@ class Player {
 
 //CourseData.data.holes[HoleNumber].teeBoxes[TeeBoxNumber].//par, yards, hcp
 
+//--------------------Color Scheme-----------------------
+
+//Warning global variable!!!
+var CS = false
+//Warning global variable!!!
+
+//Central color #727872
+function ColorScheme(){
+    CS = true
+    for(var i = 0; i < document.getElementsByClassName('navInput').length; i++){
+        document.getElementsByClassName('navInput')[i].style.backgroundColor = '#818577'
+    }
+    
+    for(var i = 0; i <document.getElementsByTagName('button').length; i++){
+        document.getElementsByTagName('button')[i].style.backgroundColor = '#868F81'
+        document.getElementsByTagName('button')[i].style.color = '#FFFFFF'    
+    }
+    
+    document.getElementsByTagName('main')[0].style.backgroundColor = '#77857F'
+
+    document.getElementsByTagName('body')[0].style.backgroundColor = '#77857F'
+
+    document.getElementsByTagName('header')[0].style.backgroundColor = '#818F85'
+
+    for(var i = 0; i < document.getElementsByClassName('row').length; i++){
+        document.getElementsByClassName('row')[i].style.backgroundColor = '#868F81'
+    }
+    
+    for(var i = 0; i < document.getElementsByClassName('column').length; i++){
+        document.getElementsByClassName('column')[i].style.color = '#DDDDDD'
+    }
+    for(var i = 0; i < document.getElementsByClassName('heading').length; i++){
+        document.getElementsByClassName('heading')[i].style.color = '#FFFFFF'
+    }
+    
+
+
+}
 
 //==========================================================
