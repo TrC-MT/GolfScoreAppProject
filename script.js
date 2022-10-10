@@ -121,7 +121,7 @@ class Player {
     constructor(name, id, scores = []) {
       this.name = name;
       this.id = id;
-      this.scores = scores; //Somehow set a max length of the amount of holes
+      this.scores = scores; //Somehow set the max length to the amount of holes
     }
   }
   
