@@ -179,7 +179,7 @@ function ColorScheme(){
     
     for(var i = 0; i <document.getElementsByTagName('button').length; i++){
         document.getElementsByTagName('button')[i].style.backgroundColor = '#868F81'
-        document.getElementsByTagName('button')[i].style.color = '#FFFFFF'    
+        document.getElementsByTagName('button')[i].style.color = '#FFA99E'    
     }
     
     document.getElementsByTagName('main')[0].style.backgroundColor = '#77857F'
