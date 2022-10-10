@@ -96,9 +96,32 @@ async function render(){
     FourthRowHTML += `<div class="column">${TotalHCP}</div>`
     document.getElementById('Pars').innerHTML = FourthRowHTML
 
+    //Note to self: combine the for loops into one.
 
     //player stuff
+
 }
+//-----------------Player objects--------------------
+class Player {
+    constructor(name, id, scores = []) {
+      this.name = name;
+      this.id = id;
+      this.scores = scores;
+    }
+  }
+  
+  var PlrIdValue = 0
+  function addPlr(PlrIdValue){
+    PlrIdValue += 1
+    PlrId = 'Plr' + PlrIdValue
+    if(PlrId <= 4){
+        new Player(document.getElementById('PlrNm').value, id = PlrId)
+    }
+    else{
+        document.getElementById('PlrAdd').innerHTML = `Max Players!`
+        document.getElementById('PlrAdd').style.backgroundColor = `#4D4932`
+    }
+  }
 
 //------------- Misc section ----------
 
