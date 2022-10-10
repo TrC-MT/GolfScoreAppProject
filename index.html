@@ -10,68 +10,49 @@
 </head>
 <body>
     <header>
-        <h1 id="coursename">Example Course Name</h1>
+        <h1 id="coursename"></h1>
+        <div class="standAloneButtons">
+            <button onclick="SwitchCourse()">Switch Course</button>
+            <button>Another button</button>
+        </div>
         <nav>
-            <div class="inputsbox"><input class="navInput" type="text" id="test" placeholder="TestingStyles"></div>
-            <div class="buttonsbox"><button>TestStyles</button></div>
+            <div class="inputsbox">
+                <input class="navInput" type="text" id="TBN" placeholder="Type the teebox number">
+            </div>
+            <div class="buttonsbox">
+                <button onclick="render()">Choose teebox</button>
+            </div>
         </nav>
     </header>
     <main>
         <div class="maincontentContainer">
-            <div class="row">
-                <div class="column heading">Hole</div>
-                <div class="column heading">1</div>
+            <div class="row" id="HolesAmount">
+                <!-- <div class="column heading left-heading">Hole</div>
+                <div class="column heading"></div>
                 <div class="column heading">2</div>
                 <div class="column heading">3</div>
-                <div class="column heading">4</div>
-                <div class="column heading">5</div>
-                <div class="column heading">6</div>
-                <div class="column heading">7</div>
-                <div class="column heading">8</div>
-                <div class="column heading">9</div>
-                <div class="column heading">Out</div>
+                <div class="column heading">Out</div> -->
             </div>
-            <div class="row">
-                <div class="column heading">Yardage</div>
+            <div class="row" id="Yardage">
+                <!-- <div class="column heading left-heading">Yardage</div>
                 <div class="column">234</div>
-                <div class="column">432</div>
-                <div class="column">2</div>
                 <div class="column">86</div>
-                <div class="column">34</div>
-                <div class="column"></div>
-                <div class="column"></div>
-                <div class="column"></div>
-                <div class="column"></div>
-                <div class="column"></div>
+                <div class="column">2</div> -->
+            </div>
+            <div class="row" id="Pars">
+                <!-- <div class="column heading left-heading">Par</div>
+                <div class="column">4</div>
+                <div class="column">4</div>
+                <div class="column">5</div> -->
+            </div>
+            <div class="row" id="Handicaps">
+                <!-- <div class="column heading left-heading">Handicap</div>
+                <div class="column">5</div>
+                <div class="column">16</div>
+                <div class="column">1</div> -->
             </div>
             <div class="row">
-                <div class="column heading">Par</div>
-                <div class="column"></div>
-                <div class="column"></div>
-                <div class="column"></div>
-                <div class="column"></div>
-                <div class="column"></div>
-                <div class="column"></div>
-                <div class="column"></div>
-                <div class="column"></div>
-                <div class="column"></div>
-                <div class="column"></div>
-            </div>
-            <div class="row">
-                <div class="column heading">Handicap</div>
-                <div class="column"></div>
-                <div class="column"></div>
-                <div class="column"></div>
-                <div class="column"></div>
-                <div class="column"></div>
-                <div class="column"></div>
-                <div class="column"></div>
-                <div class="column"></div>
-                <div class="column"></div>
-                <div class="column"></div>
-            </div>
-            <div class="row">
-                <div class="column heading">Player 1</div>
+                <div class="column heading left-heading">Player 1</div>
                 <div class="column"></div>
                 <div class="column"></div>
                 <div class="column"></div>

@@ -14,10 +14,16 @@ header{
     background-color: #1EA300;
 }
 #coursename{
-    width:fit-content;
+    width: fit-content;
     margin-right: 15px;
     margin-left: 8px;
     color: #080640;
+}
+.standAloneButtons{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin-right: 2%;
 }
 nav{
     display: flex;
@@ -46,27 +52,33 @@ button{
 /*------- main content styles ------------- */
 main{
     width: 100%;
-    background-color: #24C400;
+    background-color: #06248A;
 }
 .maincontentContainer{
-    width: 95%;
+    width: 98%;
     padding-top: 20px;
-    margin-left: 2%;
+    padding-bottom: 20px;
+    margin-left: 1%;
+    font-size: 1.2em;
 }
 .row{
-    width: 90%;
+    width: 100%;
     border: 2px solid #0f0f0f0f;
     display: flex;
+    background-color: #24C400;
 }
 .column{
-    width: fit-content;
-    border: 1px solid #0a0a0a0a;
+    width: 9%;
+    border: 2px solid #0a0a0a0a;
     color: #C45314;
+    text-align: center;
 }
 
 /*---------- individual content styles --------- */
 .heading{
-    font-weight: bold;
     color: #782F06;
 }
-
+.left-heading{
+    text-align: left;
+    /* width: 10%; */
+}
