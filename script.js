@@ -104,7 +104,7 @@ async function render(){
     // for(var i = 0; i </*amount of players*/; i++){
     //     var PlrTotalScore = 0
     //     FifthRowHTML += `<div class="row">`
-    //     FifthRowHTML += `<div class="column heading left-heading">${/*Player[i].name*/ }</div>`
+    //     FifthRowHTML += `<div class="column heading left-heading">${/*Player[i].name*/ }   id=${Player[i].id}</div>`
     //     for(var j = 0; j < /*Player[i].scores.length */; j++){
     //         FifthRowHTML += `<div class="column">${/*Player[i].scores[j] */}</div>`
     //         PlrTotalScore += /*Player[i].scores[j] */
@@ -125,6 +125,7 @@ class Player {
     }
   }
   
+  //adding a player
   var PlrIdValue = 0
   function addPlr(){
     PlrIdValue += 1
@@ -137,6 +138,22 @@ class Player {
         document.getElementById('PlrAdd').style.backgroundColor = `#4D4932`
         document.getElementById('PlrAdd').style.color = `rgb(255, 0, 0)`
     }
+  }
+
+  //adding a player.score
+  function addPlrScr(){
+    PId = document.getElementById('PlrId').value
+    /* 
+    for(var i = 0; i < AmountOfPlayers;){
+        if(Player.id == PId){   // Remember that max length value somehow
+            Player.score.push(document.getElementById(PlrScr).value)
+        }
+        else{
+            i++
+        }
+    }
+        
+    */
   }
 
 //------------- Misc section ----------

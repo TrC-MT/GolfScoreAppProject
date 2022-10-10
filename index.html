@@ -19,10 +19,16 @@
             <div class="inputsbox">
                 <input class="navInput" type="text" id="TBN" placeholder="Type the teebox number">
                 <input class="navInput" type="text" id="PlrNm" placeholder="Type the player name">
+                <span></span>
+                <input type="text" class="navInput" id="PlrId" placeholder="Id of the player for score">
+                <input class="navInput" type="text" id="PlrScr" placeholder="Type the player score">
             </div>
             <div class="buttonsbox">
                 <button onclick="render()">Choose teebox</button>
                 <button onclick="addPlr()" id="PlrAdd">Add player</button>
+                <span></span>
+                <span></span>
+                <button onclick="addPlrScr()">Insert score</button>
             </div>
         </nav>
     </header>
