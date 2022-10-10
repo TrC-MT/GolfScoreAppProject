@@ -98,7 +98,22 @@ async function render(){
 
     //Note to self: combine the for loops into one.
 
-    //player stuff
+    //Rendering players
+
+    // var FifthRowHTML = ``
+    // for(var i = 0; i </*amount of players*/; i++){
+    //     var PlrTotalScore = 0
+    //     FifthRowHTML += `<div class="row">`
+    //     FifthRowHTML += `<div class="column heading left-heading">${/*Player[i].name*/ }</div>`
+    //     for(var j = 0; j < /*Player[i].scores.length */; j++){
+    //         FifthRowHTML += `<div class="column">${/*Player[i].scores[j] */}</div>`
+    //         PlrTotalScore += /*Player[i].scores[j] */
+    //     }
+    //     FifthRowHTML += `<div class="column">${PlrTotalScore}</div>`
+    //     FifthRowHTML += `</div>`
+    // }
+    // document.getElementById('Players').innerHTML = FifthRowHTML
+    
 
 }
 //-----------------Player objects--------------------
@@ -106,20 +121,23 @@ class Player {
     constructor(name, id, scores = []) {
       this.name = name;
       this.id = id;
-      this.scores = scores;
+      this.scores = scores; //Somehow set a max length of the amount of holes
     }
   }
   
   var PlrIdValue = 0
-  function addPlr(PlrIdValue){
+  function addPlr(){
     PlrIdValue += 1
+    console.log('PlrIdValue:')
+    console.log(PlrIdValue)
     PlrId = 'Plr' + PlrIdValue
-    if(PlrId <= 4){
+    if(PlrIdValue <= 4){
         new Player(document.getElementById('PlrNm').value, id = PlrId)
     }
     else{
         document.getElementById('PlrAdd').innerHTML = `Max Players!`
         document.getElementById('PlrAdd').style.backgroundColor = `#4D4932`
+        document.getElementById('PlrAdd').style.color = `rgb(255, 0, 0)`
     }
   }
 
