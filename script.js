@@ -113,6 +113,9 @@ async function render(){
         FifthRowHTML += `</div>`
     }
     document.getElementById('Players').innerHTML = FifthRowHTML
+
+    //if all the scores are filled out
+    // document.getElementsByTagName('footer')[0].style.visibility = 'visible'
     
     //Making sad color scheme if wanted
     if(CS == true){

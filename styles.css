@@ -82,3 +82,14 @@ main{
     text-align: left;
     /* width: 10%; */
 }
+
+/*------------ footer styles ---------------- */
+
+footer{
+    background-color: #CFC50A;
+    color: #0AC785;
+    font-size: 3em;
+    font-weight:bolder;
+    text-align: center;
+    visibility: hidden;
+}
