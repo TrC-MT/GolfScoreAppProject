@@ -105,9 +105,10 @@ async function render(){
         var PlrTotalScore = 0
         FifthRowHTML += `<div class="row">`
         FifthRowHTML += `<div class="column heading left-heading">${players[i].name}   id=${players[i].id}</div>`
-        for(var j = 0; j < players[i].scores.length; j++){
-            FifthRowHTML += `<div class="column">${players[i].scores[j]}</div>`
-            PlrTotalScore += players[i].scores[j]
+        for(var j = 0; j < AmountOfHoles; j++){
+            var currentScore = Number(players[i].scores[j] || 0)
+            FifthRowHTML += `<div class="column">${currentScore}</div>`
+            PlrTotalScore += currentScore
         }
         FifthRowHTML += `<div class="column">${PlrTotalScore}</div>`
         FifthRowHTML += `</div>`
@@ -128,7 +129,7 @@ async function render(){
 }
 //-----------------Player objects--------------------
 class Player {
-    constructor(name, id, scores = [] /*new Array(18).fill(0)*/) {
+    constructor(name, id, scores = []) {
       this.name = name;
       this.id = id;
       this.scores = scores; //Somehow set the max length to the amount of holes
@@ -138,9 +139,6 @@ class Player {
   //Warning global variable!!!
   var players = [] //[{name: value, id: value, score: [number, number, number]}, {name: value, id: value, score: [number, number, number]}]
   //Warning global variable!!!
-
-  
-
 
   //adding a player
   var PlrIdValue = 0
@@ -165,12 +163,13 @@ class Player {
     
     for(var i = 0; i < players.length;){
         if(players[i].id == PId){   // Remember that max length value somehow
-            console.log('pushing the score')
-            console.log('before')
-            console.log(players[i].scores)
+
+            if(players[i].scores[players[i].scores.length-1] === null){
+                players[i].scores.pop()
+            }
+            
             players[i].scores.push(document.getElementById('PlrScr').value)
-            console.log('after')
-            console.log(players[i].scores)
+
             i++
         }
         else{
