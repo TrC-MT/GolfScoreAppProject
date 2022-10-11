@@ -100,19 +100,19 @@ async function render(){
 
     //Rendering players
 
-    // var FifthRowHTML = ``
-    // for(var i = 0; i </*amount of players*/; i++){
-    //     var PlrTotalScore = 0
-    //     FifthRowHTML += `<div class="row">`
-    //     FifthRowHTML += `<div class="column heading left-heading">${/*Player[i].name*/ }   id=${Player[i].id}</div>`
-    //     for(var j = 0; j < /*Player[i].scores.length */; j++){
-    //         FifthRowHTML += `<div class="column">${/*Player[i].scores[j] */}</div>`
-    //         PlrTotalScore += /*Player[i].scores[j] */
-    //     }
-    //     FifthRowHTML += `<div class="column">${PlrTotalScore}</div>`
-    //     FifthRowHTML += `</div>`
-    // }
-    // document.getElementById('Players').innerHTML = FifthRowHTML
+    var FifthRowHTML = ``
+    for(var i = 0; i < players.length; i++){
+        var PlrTotalScore = 0
+        FifthRowHTML += `<div class="row">`
+        FifthRowHTML += `<div class="column heading left-heading">${players[i].name}   id=${players[i].id}</div>`
+        for(var j = 0; j < players[i].scores.length; j++){
+            FifthRowHTML += `<div class="column">${players[i].scores[j]}</div>`
+            PlrTotalScore += players[i].scores[j]
+        }
+        FifthRowHTML += `<div class="column">${PlrTotalScore}</div>`
+        FifthRowHTML += `</div>`
+    }
+    document.getElementById('Players').innerHTML = FifthRowHTML
     
     //Making sad color scheme if wanted
     if(CS == true){
@@ -121,57 +121,76 @@ async function render(){
 }
 //-----------------Player objects--------------------
 class Player {
-    constructor(name, id, scores = []) {
+    constructor(name, id, scores = [] /*new Array(18).fill(0)*/) {
       this.name = name;
       this.id = id;
       this.scores = scores; //Somehow set the max length to the amount of holes
     }
   }
-  
+
+  //Warning global variable!!!
+  var players = []
+  //Warning global variable!!!
+
+  //[player1 :{name: id: score: [1, 2, 3]} Player2: {}]
+
+
   //adding a player
   var PlrIdValue = 0
   function addPlr(){
     PlrIdValue += 1
     PlrId = 'Plr' + PlrIdValue
     if(PlrIdValue <= 4){
-        new Player(document.getElementById('PlrNm').value, id = PlrId)
+        var NewPlayer = new Player(document.getElementById('PlrNm').value, id = PlrId)
+        players.push(NewPlayer)
     }
     else{
         document.getElementById('PlrAdd').innerHTML = `Max Players!`
         document.getElementById('PlrAdd').style.backgroundColor = `#4D4932`
         document.getElementById('PlrAdd').style.color = `rgb(255, 0, 0)`
     }
+    render();
   }
 
-  //adding a player.score
+  //adding a player.scores
   function addPlrScr(){
     PId = document.getElementById('PlrId').value
-    /* 
-    for(var i = 0; i < AmountOfPlayers;){
-        if(Player[i].id == PId){   // Remember that max length value somehow
-            Player[i].score.push(document.getElementById(PlrScr).value)
+    
+    for(var i = 0; i < players.length;){
+        if(players[i].id == PId){   // Remember that max length value somehow
+            console.log('pushing the score')
+            console.log('before')
+            console.log(players[i].scores)
+            players[i].scores.push(document.getElementById('PlrScr').value)
+            console.log('after')
+            console.log(players[i].scores)
+            i++
         }
         else{
             i++
         }
     }
-        
-    */
+    render();
   }
-  //undo a player.score
+  //undo a player.scores
   function undoPlrScr(){
     PId = document.getElementById('PlrId').value
-    /* 
-    for(var i = 0; i < AmountOfPlayers;){
-        if(Player[i].id == PId){   // Remember that max length value somehow
-            Player[i].score.pop()
+    
+    for(var i = 0; i < players.length;){
+        if(players[i].id == PId){
+            console.log('popping the score')
+            console.log('before')
+            console.log(players[i].scores)
+            players[i].scores.pop()
+            console.log('after')
+            console.log(players[i].scores)
+            i++
         }
         else{
             i++
         }
     }
-        
-    */
+    render();
   }
 
 //------------- Misc section ----------
