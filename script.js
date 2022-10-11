@@ -114,9 +114,13 @@ async function render(){
     }
     document.getElementById('Players').innerHTML = FifthRowHTML
 
+
+
     //if all the scores are filled out
     // document.getElementsByTagName('footer')[0].style.visibility = 'visible'
     
+
+
     //Making sad color scheme if wanted
     if(CS == true){
         ColorScheme()
@@ -132,10 +136,10 @@ class Player {
   }
 
   //Warning global variable!!!
-  var players = []
+  var players = [] //[{name: value, id: value, score: [number, number, number]}, {name: value, id: value, score: [number, number, number]}]
   //Warning global variable!!!
 
-  //[player1 :{name: id: score: [1, 2, 3]} Player2: {}]
+  
 
 
   //adding a player
