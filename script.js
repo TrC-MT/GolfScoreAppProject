@@ -199,6 +199,15 @@ class Player {
     }
     render();
   }
+//-------------------Save + restore section----------------
+function save(){
+    
+}
+function restore(){
+
+}
+//Note to self: finish the congradulations first.
+
 
 //------------- Misc section ----------
 
