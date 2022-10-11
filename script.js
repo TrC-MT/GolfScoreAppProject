@@ -148,8 +148,23 @@ class Player {
     PId = document.getElementById('PlrId').value
     /* 
     for(var i = 0; i < AmountOfPlayers;){
-        if(Player.id == PId){   // Remember that max length value somehow
-            Player.score.push(document.getElementById(PlrScr).value)
+        if(Player[i].id == PId){   // Remember that max length value somehow
+            Player[i].score.push(document.getElementById(PlrScr).value)
+        }
+        else{
+            i++
+        }
+    }
+        
+    */
+  }
+  //undo a player.score
+  function undoPlrScr(){
+    PId = document.getElementById('PlrId').value
+    /* 
+    for(var i = 0; i < AmountOfPlayers;){
+        if(Player[i].id == PId){   // Remember that max length value somehow
+            Player[i].score.pop()
         }
         else{
             i++
@@ -164,7 +179,7 @@ class Player {
 
 //CourseData.data.holes[HoleNumber].teeBoxes[TeeBoxNumber].//par, yards, hcp
 
-//--------------------Color Scheme-----------------------
+//--------------------Sad Color Scheme-----------------------
 
 //Warning global variable!!!
 var CS = false
