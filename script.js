@@ -94,7 +94,7 @@ async function render(){
         TotalHCP += CourseData.data.holes[i].teeBoxes[TBN].hcp
     }
     FourthRowHTML += `<div class="column">${TotalHCP}</div>`
-    document.getElementById('Pars').innerHTML = FourthRowHTML
+    document.getElementById('Handicaps').innerHTML = FourthRowHTML
 
     //Note to self: combine the for loops into one.
 
