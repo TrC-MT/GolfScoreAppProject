@@ -65,6 +65,12 @@ async function render(){
 
     //get the teebox number
     var TBN = Number(document.getElementById('TBN').value)
+    
+    //show the selected teebox
+    if(TBN <= 3){
+        document.getElementById('teetype').innerHTML = CourseData.data.holes[0].teeBoxes[TBN].teeType
+    }
+    
 
     //make and show the yardage of each hole.
     var SecondRowHTML = `<div class="column heading left-heading">Yardage</div>`
@@ -105,7 +111,7 @@ async function render(){
     for(var i = 0; i < players.length; i++){
         var PlrTotalScore = 0
         FifthRowHTML += `<div class="row">`
-        FifthRowHTML += `<div class="column heading left-heading">${players[i].name}   id=${players[i].id}</div>`
+        FifthRowHTML += `<div class="column heading left-heading">${players[i].name}   <u>id=${players[i].id}</u></div>`
         for(var j = 0; j < AmountOfHoles; j++){
             var currentScore = Number(players[i].scores[j] || 0)
             FifthRowHTML += `<div class="column">${currentScore}</div>`
@@ -252,7 +258,9 @@ function ColorScheme(){
         document.getElementsByClassName('heading')[i].style.color = '#FFFFFF'
     }
     
-
+    for(var i = 0; i < document.getElementsByTagName('u').length; i++){
+        document.getElementsByTagName('u')[i].style.color = '#84607C'
+    }
 
 }
 
