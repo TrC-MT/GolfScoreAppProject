@@ -101,6 +101,7 @@ async function render(){
     //Rendering players
 
     var FifthRowHTML = ``
+    var fullScores = 0
     for(var i = 0; i < players.length; i++){
         var PlrTotalScore = 0
         FifthRowHTML += `<div class="row">`
@@ -109,6 +110,15 @@ async function render(){
             var currentScore = Number(players[i].scores[j] || 0)
             FifthRowHTML += `<div class="column">${currentScore}</div>`
             PlrTotalScore += currentScore
+
+            //if all the scores are filled out
+            
+            if((j == (AmountOfHoles-1)) && (players[i].scores[j] != (0 || undefined))){
+                fullScores += 1
+                if(fullScores == players.length){
+                    document.getElementsByTagName('footer')[0].style.visibility = 'visible'
+                }
+            }
         }
         FifthRowHTML += `<div class="column">${PlrTotalScore}</div>`
         FifthRowHTML += `</div>`
@@ -116,18 +126,12 @@ async function render(){
     document.getElementById('Players').innerHTML = FifthRowHTML
 
 
-
-    //if all the scores are filled out
-    // document.getElementsByTagName('footer')[0].style.visibility = 'visible'
-    
-
-
     //Making sad color scheme if wanted
     if(CS == true){
         ColorScheme()
     }
 }
-//-----------------Player objects--------------------
+//-----------------Player section--------------------
 class Player {
     constructor(name, id, scores = []) {
       this.name = name;
