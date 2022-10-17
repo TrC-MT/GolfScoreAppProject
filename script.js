@@ -262,6 +262,9 @@ function ColorScheme(){
         document.getElementsByTagName('u')[i].style.color = '#84607C'
     }
 
+    document.getElementsByTagName('footer')[0].style.backgroundColor = '#E6E18E'
+    document.getElementsByTagName('footer')[0].style.color = '#94C794'
+
 }
 
 //==========================================================
