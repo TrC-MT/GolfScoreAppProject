@@ -36,7 +36,7 @@ async function fetchdata(){
 }
 
 function getAvailableCourses() {
-    return fetch('https://golf-courses-api.herokuapp.com/courses')
+    return fetch('https://golf-courses-api.herokuapp.com/courses') //This site is gone now. I cannot find it in the wayback machine.
     .then((response) => {return response.json()})
 }
 function getCourseData(){
